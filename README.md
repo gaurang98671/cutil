@@ -44,7 +44,7 @@ In case `--filter` was applied, aggregation will be done on filtered values
 Example
 ```
 ./cutil.py sample.csv --aggregate Index sum
-./cutil.py sample.csv --filter Age > 30 --aggregate Salary avg
+./cutil.py sample2.csv --filter Age > 30 --aggregate Salary avg
 ```
 
 ## Sorting
