@@ -41,24 +41,20 @@ def process_file(file, n:int, filter:str, o:str, aggregate:tuple[str, str], sort
         # Not happy with the tight coupling
         # this creates with csv class, but its fine for now
         f = Filter(filter, csv.col_to_index_map)
-        filtered_csv = csv.filter(f)
+        csv = csv.filter(f)
     
     if sort_by:
-        apply_on = filtered_csv or csv
-        apply_on.sort(sort_by)
+        csv.sort(sort_by)
 
     # Only display in-case we are not aggregating or storing results into a file
     if not (o or aggregate):
-        apply_on = filtered_csv or csv
-        apply_on.display(n)
+        csv.display(n)
     
     if aggregate:
-        apply_on = filtered_csv or csv
-        apply_on.aggregate(*aggregate)
+        csv.aggregate(*aggregate)
     
     if o:
-        apply_on = filtered_csv or csv
-        apply_on.save(output_file_name=o)
+        csv.save(output_file_name=o)
 
 if __name__ == "__main__":
     process_file()
