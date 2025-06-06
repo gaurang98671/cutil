@@ -36,13 +36,22 @@ Example
 ```
 ./cutil.py sample.csv --filter "First Name" contains Sh
 ```
+
 ## Aggregate
 Use `--aggregate <col_name> <operation>` to aggregate colum values
 Operations can be `sum`, `avg`, `min` or `max`
 In case `--filter` was applied, aggregation will be done on filtered values
 Example
 ```
-./cutil.py sample.csv --aggregate Indx
+./cutil.py sample.csv --aggregate Index sum
+./cutil.py sample.csv --filter Age > 30 --aggregate Salary avg
+```
+
+## Sorting
+Use `--sory_by <column_name>` to sort the results
+Example
+```
+./cutil.py sample.csv --sort_by "First Name"
 ```
 
 ## Store results
@@ -51,12 +60,6 @@ Example
 ```
 ./cutil.py sample.csv --filter "First Name" contains Sh -o op.csv
 ``` 
-## Sorting
-Use `--sory_by <column_name>` to sort the results
-Example
-```
-./cutil.py sample.csv --sort_by "First Name"
-```
 
 ## Examples
 Display all less than equal to index 10
