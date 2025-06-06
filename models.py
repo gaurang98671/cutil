@@ -72,6 +72,8 @@ class Csv:
         while i < n and i < len(self.rows):
             print(",".join(self.rows[i]))
             i += 1
+        if i < len(self.rows):
+            print(f"-----{len(self.rows) - i} more------")
     
     def sort(self, col_name:str) -> None:
         col_index = self.col_to_index_map[col_name]
