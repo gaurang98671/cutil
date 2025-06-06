@@ -99,9 +99,11 @@ class Csv:
         res = None
 
         if operation == "sum":
+            s = 0
             for v in vals:
                 if v.isnumeric():
-                    res += float(v)
+                    s += float(v)
+            res = s
         elif operation == "avg":
             s, count = 0, 0
             for v in vals:
