@@ -48,7 +48,7 @@ Example
 ```
 
 ## Sorting
-Use `--sory_by <column_name>` to sort the results
+Use `--sort_by <column_name>` to sort the results
 Example
 ```
 ./cutil.py sample.csv --sort_by "First Name"
