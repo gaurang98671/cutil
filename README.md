@@ -35,6 +35,8 @@ Operations can be `contains`, `==`, `<`, `>`, `<=` and `>=`
 Example
 ```
 ./cutil.py sample.csv --filter "First Name" contains Sh
+./cutil.py sample2.csv --filter Salary ">" 30000
+./cutil.py sample2.csv --filter Age == 30
 ```
 
 ## Aggregate
@@ -44,7 +46,9 @@ In case `--filter` was applied, aggregation will be done on filtered values
 Example
 ```
 ./cutil.py sample.csv --aggregate Index sum
-./cutil.py sample2.csv --filter Age > 30 --aggregate Salary avg
+./cutil.py sample2.csv --filter Age ">" 30 --aggregate Salary avg
+./cutil.py sample2.csv --filter Age ">" 30 --aggregate Age count
+./cutil.py sample2.csv --filter Age ">" 30 --aggregate Salary min
 ```
 
 ## Sorting
